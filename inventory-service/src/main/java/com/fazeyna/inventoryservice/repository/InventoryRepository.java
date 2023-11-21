@@ -1,2 +1,10 @@
-package com.fazeyna.inventoryservice.repository;public interface InventoryRepository {
+package com.fazeyna.inventoryservice.repository;
+
+import com.fazeyna.inventoryservice.model.Inventory;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface InventoryRepository extends JpaRepository<Inventory, Long> {
+    Optional<Inventory> findBySkuCode(String skuCode);
 }
